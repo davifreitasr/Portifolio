@@ -220,9 +220,6 @@
   .w-7\.5 {
     width: calc(var(--spacing) * 7.5);
   }
-  .w-\[20\%\] {
-    width: 20%;
-  }
   .w-\[50\%\] {
     width: 50%;
   }
@@ -231,6 +228,9 @@
   }
   .w-\[80\%\] {
     width: 80%;
+  }
+  .w-\[95\%\] {
+    width: 95%;
   }
   .w-fit {
     width: fit-content;
@@ -352,9 +352,6 @@
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
-  .pt-20 {
-    padding-top: calc(var(--spacing) * 20);
-  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -451,6 +448,21 @@
       display: none;
     }
   }
+  .md\:w-\[20\%\] {
+    @media (width >= 48rem) {
+      width: 20%;
+    }
+  }
+  .md\:w-\[50\%\] {
+    @media (width >= 48rem) {
+      width: 50%;
+    }
+  }
+  .md\:w-\[80\%\] {
+    @media (width >= 48rem) {
+      width: 80%;
+    }
+  }
   .md\:grid-cols-2 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -459,6 +471,16 @@
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .md\:items-start {
+    @media (width >= 48rem) {
+      align-items: flex-start;
+    }
+  }
+  .md\:pt-20 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 20);
     }
   }
 }
@@ -513,11 +535,9 @@ body {
     transform: translateY(-100%);
     background: var(--background);
     transition: transform 500ms ease-in-out;
-    opacity: 0;
   }
   .nav-links.active {
     transform: translateY(0);
-    opacity: 1;
   }
 }
 @property --tw-border-style {

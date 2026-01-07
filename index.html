@@ -9,7 +9,7 @@
     <script src="script.js" defer></script>
     <title>Davi Freitas</title>
 </head>
-<body class="min-h-full pt-20 relative">
+<body class="min-h-full md:pt-20 relative">
     <header>
         <nav>
             <div class="navbar bg-[rgba(12,12,12,0.4)] border border-b-[rgba(255,255,255,0.08)] flex justify-between items-center w-full px-12 py-6 fixed top-0 z-50">
@@ -34,10 +34,10 @@
     </header>
 
     <main>
-        <div class="flex flex-col justify-center items-center h-screen w-[80%] m-auto">
-            <div class="flex flex-col gap-6">
+        <div class="flex flex-col justify-center items-center h-screen md:w-[80%] w-[95%]  m-auto">
+            <div class="flex flex-col  gap-6">
                 <h1 class="text-[#EDEDED] text-6xl font-bold">Transformo ideias em <span class="text-[#7C7CFF]">interfaces modernas</span></h1>
-                <p class="text-[#A1A1AA] text-lg w-[50%]">Sou um desenvolvedor Front-end focado em criar experiências bonitas, funcionais e performáticas.</p>
+                <p class="text-[#A1A1AA] text-lg w-full md:w-[50%]">Sou um desenvolvedor Front-end focado em criar experiências bonitas, funcionais e performáticas.</p>
 
                 <div class="flex gap-4">
                     <button type="button" class="bg-[#7C7CFF] p-3 border-none rounded-2xl text-[#EDEDED] font-bold hover:bg-white hover:text-[#7C7CFF] transition-colors duration-200 cursor-pointer" onclick="location.href='#projects'">Ver Projetos</button>
@@ -46,7 +46,7 @@
             </div>
         </div>
 
-        <div class="about flex flex-col gap-4 h-[80vh] w-[80%] m-auto" id="about">
+        <div class="flex flex-col justify-center items-center gap-4 h-[80vh] w-[95%] md:w-[80%] m-auto" id="about">
             <div>
                 <h2 class="text-[#EDEDED] font-bold text-2xl">Sobre mim</h2>
             </div>
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <div class="projects flex flex-col gap-4 h-screen w-[80%] m-auto" id="projects">
+        <div class="projects flex flex-col items-center md:items-start gap-4 h-screen md:w-[80%] w-[95%] m-auto" id="projects">
             <div>
                 <h2 class="text-[#EDEDED] text-2xl font-bold">Projetos</h2>
             </div>
@@ -123,12 +123,12 @@
             </div>
         </div>
 
-        <div class="skills flex flex-col gap-4 h-[50vh] w-[80%] m-auto" id="skills">
+        <div class="skills flex flex-col items-center gap-4 h-[50vh] w-[80%] m-auto" id="skills">
             <div>
                 <h2 class="text-[#EDEDED] text-2xl font-bold">Skills</h2>
             </div>
 
-            <div class="flex gap-4 w-[60%] select-none">
+            <div class="flex flex-col gap-4 w-[60%] select-none">
                 <span class="bg-[#202028] text-[#EDEDED] border border-[#333] rounded-3xl p-2">HTML</span>
                 <span class="bg-[#202028] text-[#EDEDED] border border-[#333] rounded-3xl p-2">CSS</span>
                 <span class="bg-[#202028] text-[#EDEDED] border border-[#333] rounded-3xl p-2">JavaScript</span>
@@ -137,10 +137,10 @@
             </div>
         </div>
 
-        <div class="contact flex flex-col gap-4 h-[30vh] w-[80%] m-auto" id="contact">
-            <div class="flex flex-col gap-4">
+        <div class="contact flex flex-col gap-4 h-[30vh] md:w-[80%] w-[95%]  m-auto" id="contact">
+            <div class="flex flex-col items-center md:items-start gap-4">
                 <h2 class="text-[#EDEDED] text-xl font-bold">Vamos tirar o seu projeto do papel?</h2>
-                <button type="button" class="bg-[#7C7CFF] w-[20%] p-3 border-none rounded-xl text-[#EDEDED] font-bold hover:bg-white hover:text-[#7C7CFF] transition-colors duration-200 cursor-pointer">Enviar e-mail</button>
+                <button type="button" class="bg-[#7C7CFF] md:w-[20%] w-[50%] p-3 border-none rounded-xl text-[#EDEDED] font-bold hover:bg-white hover:text-[#7C7CFF] transition-colors duration-200 cursor-pointer">Enviar e-mail</button>
             </div>
         </div>
     </main>
