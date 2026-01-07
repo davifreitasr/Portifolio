@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: radial-gradient(circle at top, #1a1a2e, #0f0f14);
+    --selection-bg: #6666D1;
+    --selection-txt: #ededed;
+}
+
+::selection {
+    background: var(--selection-bg);
+    color: var(--selection-txt);
+}
+
+body, html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7C7CFF;
+    transition: width 300ms ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.about,
+.projects,
+.skills {
+    scroll-margin-top: 150px;
+}
+
+.contact {
+    scroll-margin-top: 400px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        inset: 0;
+        height: 100vh;
+        width: 100%;
+        transform: translateY(-100%);
+        background: var(--background);
+        transition: transform 500ms ease-in-out ;
+        opacity: 0;
+}
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+}
+}
