@@ -11,12 +11,16 @@
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
     --font-weight-bold: 700;
@@ -205,12 +209,6 @@
   .h-\[30vh\] {
     height: 30vh;
   }
-  .h-\[50vh\] {
-    height: 50vh;
-  }
-  .h-\[80vh\] {
-    height: 80vh;
-  }
   .h-screen {
     height: 100vh;
   }
@@ -222,12 +220,6 @@
   }
   .w-\[50\%\] {
     width: 50%;
-  }
-  .w-\[60\%\] {
-    width: 60%;
-  }
-  .w-\[80\%\] {
-    width: 80%;
   }
   .w-\[95\%\] {
     width: 95%;
@@ -313,9 +305,6 @@
   .bg-\[\#7C7CFF\] {
     background-color: #7C7CFF;
   }
-  .bg-\[\#202028\] {
-    background-color: #202028;
-  }
   .bg-\[\#242431\] {
     background-color: #242431;
   }
@@ -343,8 +332,8 @@
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
-  .px-12 {
-    padding-inline: calc(var(--spacing) * 12);
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
   }
   .py-1\.5 {
     padding-block: calc(var(--spacing) * 1.5);
@@ -355,6 +344,10 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-6xl {
     font-size: var(--text-6xl);
@@ -478,9 +471,26 @@
       align-items: flex-start;
     }
   }
+  .md\:px-12 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 12);
+    }
+  }
   .md\:pt-20 {
     @media (width >= 48rem) {
       padding-top: calc(var(--spacing) * 20);
+    }
+  }
+  .md\:text-2xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .md\:text-base {
+    @media (width >= 48rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
 }
@@ -490,6 +500,8 @@
 }
 :root {
   --background: radial-gradient(circle at top, #1a1a2e, #0f0f14);
+  --background-logo: #ededed;
+  --nav-links: #7C7CFF;
   --selection-bg: #6666D1;
   --selection-txt: #ededed;
 }
@@ -504,6 +516,15 @@ body {
   background: var(--background);
   font-family: "Montserrat", sans-serif;
 }
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 57%;
+  height: 3px;
+  background: var(--background-logo);
+}
 .navbar {
   backdrop-filter: blur(10px);
 }
@@ -514,20 +535,23 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #7C7CFF;
+  background-color: var(--nav-links);
   transition: width 300ms ease;
 }
 .nav-links a:hover::after {
   width: 100%;
 }
-.about, .projects, .skills {
+.about, .projects, .contact {
   scroll-margin-top: 150px;
-}
-.contact {
-  scroll-margin-top: 400px;
 }
 @media (max-width: 768px) {
   .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
     position: fixed;
     inset: 0;
     height: 100vh;

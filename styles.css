@@ -7,6 +7,8 @@
 
 :root {
     --background: radial-gradient(circle at top, #1a1a2e, #0f0f14);
+    --background-logo: #ededed;
+    --nav-links: #7C7CFF;
     --selection-bg: #6666D1;
     --selection-txt: #ededed;
 }
@@ -25,6 +27,16 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 57%;
+    height: 3px;
+    background: var(--background-logo);
+}
+
 .navbar {
     backdrop-filter: blur(10px);
 }
@@ -36,7 +48,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #7C7CFF;
+    background-color: var(--nav-links);
     transition: width 300ms ease;
 }
 
@@ -46,17 +58,19 @@ body {
 
 .about,
 .projects,
-.skills {
-    scroll-margin-top: 150px;
-}
-
 .contact {
-    scroll-margin-top: 400px;
+    scroll-margin-top: 150px;
 }
 
 @media (max-width: 768px) {
 
 .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
     position: fixed;
     inset: 0;
     height: 100vh;
